@@ -17,6 +17,7 @@ list = list.map(curr =>{
     return curr.split('\n');
 })
 list.shift();
+
 list = list.map(curr => {
     let obj = new Object();
     obj['mask'] = curr[0].substring(curr[0].lastIndexOf(' ')+1);
@@ -32,6 +33,8 @@ list = list.map(curr => {
 
     return obj;
 })
+
+
 let addressSpace = new Map();
 let curr = list.map(curr => {
     let mask = curr['mask'];
@@ -59,3 +62,5 @@ let log = (value)=>{
 
 addressSpace.forEach(log);
 console.log(sum);
+
+export {};
